@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Update Customer {{ customer.id }}</title>
+</head>
+<body>
+
+<h1>Update Customer {{ customer.id }}</h1>
+
+<form method="post" id="update-customer-form">
+    {% csrf_token %}
+    <div>
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" value="{{ customer.id }}" readonly>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ customer.name }}">
+    </div>
+    <div>
+        <label for="contact_number">Contact Number:</label>
+        <input type="text" id="contact_number" name="contact_number" value="{{ customer.contact_number }}">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ customer.email }}">
+    </div>
+
+    <input type="submit" value="Update Customer">
+</form>
+
+</body>
+</html>

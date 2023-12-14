@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Order List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-7"><h1 class="mb-4">Order List</h1></div>
+        <!-- <div class="col-3">    <a href="{% url 'order-list-by-customer' %}" class="btn btn-primary mb-2">Orders By Customer</a> -->
+        <!-- </div> -->
+        <!-- <div class="col-2">    <a href="{% url 'order-list-by-product' %}" class="btn btn-primary mb-2">Orders By Product</a> -->
+        <!-- </div> -->
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>SR NO</th>
+                <th>ORDER ID</th>
+                <th>Customer Name</th>
+                <th>ORDER DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.order_number }}</td>
+                    <td>{{ order.customer.name }}</td>
+                    <td>{{ order.order_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
